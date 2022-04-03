@@ -11,7 +11,6 @@
     Create a new class called `Employee`.
     Make sure to call your constructor, and 
     require these 2 parameters: name, shifts.
-
     Create a method on the class called 
     `getSchedule` that prints a string:
     [NAME] works on [SHIFTS]
@@ -28,18 +27,17 @@ class Employee{
     }
 
     getSchedule(){
-        //console.log(`${this.name} works on ${this.shifts}`)
+         console.log(`${this.name} works on ${this.shifts}`)
     }
 
 }
 
  const sumaya = new Employee('Sumaya', 'Fridays')
-// sumaya.getSchedule()
+ sumaya.getSchedule()
 
 /*
     Create a new instance of your class.
     Save it to a variable called `empOne`.
-
     You can use this sample data or make
     up your own:
     name: Jess
@@ -48,7 +46,7 @@ class Employee{
 
 //CODE HERE
 
- const empOne = new Employee('Jess', 'weekday mornings and weekday afternoons')
+  const empOne = new Employee('Jess', 'weekday mornings and weekday afternoons')
 
 /*
     Call the `getSchedule` method on the
@@ -57,7 +55,7 @@ class Employee{
 
 //CODE HERE
 
- //empOne.getSchedule()
+  empOne.getSchedule()
 
 
 
@@ -65,9 +63,7 @@ class Employee{
     Make a copy of the empOne object
     using the spread operator.
     Save it to a variable called `empTwo`.
-
     Change the name of `empTwo` to 'Nick'.
-
     Hint: you can do this inline with the 
     spread operator or reassign it using 
     dot or bracket notation.
@@ -75,11 +71,11 @@ class Employee{
 
 //CODE HERE
 
-// const empTwo = {...empOne}
-//console.log(empTwo)
+const empTwo = {...empOne}
+console.log(empTwo)
 
-// empTwo.name = "Nick"
-//console.log(empTwo)
+empTwo.name = "Nick"
+console.log(empTwo)
 
 
 
@@ -92,13 +88,11 @@ class Employee{
     new one: employees, which will be an array of 
     employees that report to this manager. 
     (Hint: don't forget to call the super function)
-
     Create a method called `getEmployees` that
     console.logs a string:
     [NAME] manages [EMPLOYEES]
     Where NAME and EMPLOYEES reference the values
     stored on the object.
-
     Create a second method called `addEmployee`
     that takes in one argument, `emp`, which
     should be a string of an employee name.
@@ -111,7 +105,7 @@ class Employee{
 class Manager extends Employee{
     constructor(name, shifts, employees){
         super(name,shifts)
-        this.employees = []
+        this.employees = employees
 
     }
 
@@ -120,17 +114,14 @@ class Manager extends Employee{
     }
 
 
-    // addEmployee(emp){
-    //     this.employees.push(emp)
-    // }
+    addEmployee(emp){
+        this.employees.push(emp)
+    }
 }
-
-const maria = new Manager('Maria')
 
 /*
     Create a new instance of your class.
     Save it to a variable called `manager`.
-
     You can use this sample data or make
     up your own:
     name: Winston
@@ -140,7 +131,7 @@ const maria = new Manager('Maria')
 
 //CODE HERE
 
-
+const manager = new Manager('Maria', ['weekday mornings and weekday afternoons'], ['Alex and Max'])
 
 /*
     Call the `getEmployees` method on the
@@ -148,6 +139,9 @@ const maria = new Manager('Maria')
 */
 
 //CODE HERE
+
+manager.getEmployees()
+
 
 /*
     Call the `addEmployee` method on the 
@@ -157,6 +151,8 @@ const maria = new Manager('Maria')
 
 //CODE HERE 
 
+manager.addEmployee('Justin')
+
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -164,3 +160,5 @@ const maria = new Manager('Maria')
 */
 
 //CODE HERE
+
+manager.getEmployees()
