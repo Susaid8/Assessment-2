@@ -15,11 +15,9 @@
     customerId. Additionally, set up a property
     called `status` that always has an initial
     value of 'queued'.
-
     Create a method on the class called `updateStatus`.
     The method should have one parameter, `newStatus`,
     which will be a string.
-
     Inside the method, set the value of `this.status`
     to be the new status that was sent in. Then
     console.log something like: 
@@ -31,12 +29,23 @@
 
 //CODE HERE
 
+class Ticket {
+  constructor(items, orderTime, customerId){
+    this.items = items
+    this.orderTime = orderTime
+    this.customerId = customerId
+    this.status = 'queued'
+  }
+  updateStatus(newStatus){
+    this.status = newStatus
+    console.log(`The order for customer ${this.customerId} is now ${this.status}`)
+  }
+}
 
 
 /*
     Create a new instance of your class.
     Save it to a variable called `firstTicket`.
-
     You can use this sample data or make
     up your own:
     food ordered: pizza, bread, and soda
@@ -46,6 +55,8 @@
 
 //CODE HERE
 
+const firstTicket = new Ticket('pizza', '7pm', 575)
+console.log(firstTicket)
 
 /*
     Call the `updateStatus` method on
@@ -54,3 +65,5 @@
 */
 
 //CODE HERE
+
+firstTicket.updateStatus('cooking')
